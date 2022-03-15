@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3000
 
 // CREATE BASE ROUTE
 app.use('/', (req, res)=>{
-    res.status(200).json({message: "API CHANGED!"})
+    res.status(200).json({message: "AI CHANGED!"})
 })
 
 // LISTEN
