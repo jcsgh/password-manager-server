@@ -1,13 +1,12 @@
 const express = require('express')
-const register = require('../schemas/registerSchema')
-const login = require('../schemas/loginSchema')
+const User = require('../schemas/userSchema')
 
 // Create the Router
 const passwordRouter = express.Router()
 
 // Create the Routes
-passwordRouter.get("/users", (req, res)=>{
-    login.find((error, result)=>{
+passwordRouter.get("/", (req, res)=>{
+    User.find((error, result)=>{
         if(error){
             res.status(500).json({message: error.message})
         }
