@@ -1,10 +1,28 @@
+// DEPENDENCIES
+
+// express makes designing and building web applications 
+// quick and easy.
 const express = require('express')
+
+// bodyParser responsible for parsing the incoming request 
+// bodies in a middleware before you handle it.
 const bodyParser = require('body-parser')
+
+// dotenv allows us to separate secrets from our source code. 
 const dotenv = require('dotenv')
+
+// morgan is a Node. js and Express middleware to log HTTP 
+// requests and errors, and simplifies the process.
+const morgan = require('morgan')
+
+// Cross-origin Rescource Sharing (CORS) allows us to make
+// requests from one website to another in the browser
+// usually prohibited by another browser policy called the
+// Same-Origin Policy (SOP).
+const cors = require('cors')
+
 const mongooseConnect = require('./mongoConfig')
 const passwordRouter = require('./routes/passwordRoutes')
-const morgan = require('morgan')
-const cors = require('cors')
 
 // STEP ONE - Create the App
 const app = express()
