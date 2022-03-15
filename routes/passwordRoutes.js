@@ -1,4 +1,5 @@
 const express = require('express')
+const register = require('../schemas/registerSchema')
 const login = require('../schemas/loginSchema')
 
 // Create the Router
@@ -17,19 +18,19 @@ passwordRouter.get("/", (req, res)=>{
     })
 })
 
-// passwordRouter.post("/", (req, res)=>{
-//     const todo = req.body
-//     todo.created_at = Date.now()
-//     todo.completed = false
-//     ToDo.create(todo, (error, result)=>{
-//         if(error){
-//             res.status(400).json({message: error.message})
-//         }
-//         if(result ===  null || result === []){
-//             res.status(400).json({message: error.message})
-//         }
-//         res.status(201).json({todo_item: result})
-//     })
-// })
+passwordRouter.post("/register", (req, res)=>{
+    const user = req.body
+    user.created_at = Date.now()
+    user.completed = false
+    register.create(user, (error, result)=>{
+        if(error){
+            res.status(400).json({message: error.message})
+        }
+        if(result ===  null || result === []){
+            res.status(400).json({message: error.message})
+        }
+        res.status(201).json({user: result})
+    })
+})
 
 module.exports = passwordRouter

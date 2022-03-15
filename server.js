@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 
 // ROUTES
-app.use('/password', passwordRouter)
+app.use('/passwordManager', passwordRouter)
 
 // CREATE THE PORT
 const PORT = process.env.PORT || 3000
