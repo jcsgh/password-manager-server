@@ -1,4 +1,4 @@
-// DEPENDENCIES
+// *** DEPENDENCIES ***
 
 // express makes designing and building web applications 
 // quick and easy.
@@ -21,8 +21,12 @@ const morgan = require('morgan')
 // Same-Origin Policy (SOP).
 const cors = require('cors')
 
+// Mongoose
 const mongooseConnect = require('./mongoConfig')
+
+// initialize routes
 const passwordRouter = require('./routes/passwordRoutes')
+const authRouter = require('./routes/authRoutes')
 
 // STEP ONE - Create the App
 const app = express()
@@ -38,6 +42,7 @@ app.use(morgan('dev'))
 
 // ROUTES
 app.use('/passwordManager', passwordRouter)
+app.use('/auth', authRouter)
 
 // CREATE THE PORT
 const PORT = process.env.PORT || 3000
