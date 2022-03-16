@@ -8,10 +8,6 @@ const User = require('../schemas/userSchema')
 // Create the Router
 const authRouter = express.Router()
 
-// authRouter.get("/", (req, res) => {
-//     res.status(200).json({message: "Auth routes up"})
-// })
-
 authRouter.post("/register", async(req, res)=>{
     let user = req.body
     let password = user.password

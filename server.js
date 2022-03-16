@@ -25,7 +25,7 @@ const cors = require('cors')
 const mongooseConnect = require('./mongoConfig')
 
 // initialize routes
-const passwordRouter = require('./routes/passwordRoutes')
+const accountRouter = require('./routes/accountsRoutes')
 const authRouter = require('./routes/authRoutes')
 
 // STEP ONE - Create the App
@@ -41,7 +41,7 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 
 // ROUTES
-app.use('/passwordManager', passwordRouter)
+app.use('/passwordManager', accountRouter)
 app.use('/auth', authRouter)
 
 // CREATE THE PORT
