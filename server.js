@@ -45,7 +45,7 @@ app.use('/passwordManager', accountRouter)
 app.use('/auth', authRouter)
 
 // CREATE THE PORT
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 
 // CREATE BASE ROUTE
 app.use('/', (req, res)=>{

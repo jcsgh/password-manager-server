@@ -10,6 +10,7 @@ const authRouter = express.Router()
 
 authRouter.post("/register", async(req, res)=>{
     let user = req.body
+    console.log(user)
     let password = user.password
     let salt = Number(process.env.SALT)
     user.created_at = Date.now()
@@ -17,7 +18,7 @@ authRouter.post("/register", async(req, res)=>{
 
     //TODO Make DataValidation Middleware LATER
     if (!user.firstname || !user.lastname || !user.username || !user.email || !user.password){
-        res.status(400).json({message: "Please enter a firstname, lastname, username, email, and password"})
+        return res.status(400).json({message: "Please enter a firstname, lastname, username, email, and password"})
     }
 
     // TODO Make helper
@@ -26,10 +27,10 @@ authRouter.post("/register", async(req, res)=>{
     
     User.create(user, (error, result)=>{
         if(error){
-            res.status(400).json({message: error.message})
+            return res.status(400).json({message: error.message})
         }
         if(result ===  null || result === []){
-            res.status(400).json({message: error.message})
+            return res.status(400).json({message: error.message})
         }
         res.status(201).json({user: result})
     })
