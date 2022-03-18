@@ -18,7 +18,7 @@ accountRouter.get("/", (req, res)=>{
         if(result ===  null || result === []){
             res.status(404).json({message: error.message})
         }
-        res.status(200).json({message: "YEAH"})
+        res.status(200).json({accounts: result})
     })
 })
 
