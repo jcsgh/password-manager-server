@@ -24,6 +24,9 @@ const cors = require('cors')
 // Mongoose
 const mongooseConnect = require('./mongoConfig')
 
+// cookie parser
+const cookieParser = require('cookie-parser')
+
 // initialize routes
 const accountRouter = require('./routes/accountsRoutes')
 const authRouter = require('./routes/authRoutes')
@@ -39,6 +42,8 @@ app.use(cors({
 }))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
+app.use(cookieParser())
+app.use(express.json())
 
 // ROUTES
 app.use('/passwordManager', accountRouter)
