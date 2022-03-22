@@ -22,7 +22,17 @@
     "mongo": "^0.1.0",
     "mongo-express": "^1.0.0-alpha.4",
     "mongoose": "^6.2.6",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node-modules": "^1.0.1",
+    "nodemon": "^2.0.15"
   },
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcsgh/password-manager-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jcsgh/password-manager-server/issues"
+  },
+  "homepage": "https://github.com/jcsgh/password-manager-server#readme"
 }

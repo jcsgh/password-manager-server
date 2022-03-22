@@ -30,6 +30,7 @@ const cookieParser = require('cookie-parser')
 // initialize routes
 const accountRouter = require('./routes/accountsRoutes')
 const authRouter = require('./routes/authRoutes')
+const passwordRouter = require('./routes/passwordRoutes')
 
 // STEP ONE - Create the App
 const app = express()
@@ -46,7 +47,8 @@ app.use(cookieParser())
 app.use(express.json())
 
 // ROUTES
-app.use('/passwordManager', accountRouter)
+app.use('/account', accountRouter)
+app.use('/passwordManager', passwordRouter)
 app.use('/auth', authRouter)
 
 // CREATE THE PORT
