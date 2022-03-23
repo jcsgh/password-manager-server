@@ -2,4 +2,4 @@
 
 [Link to Backend code on Heroku](https://josh-password-manager.herokuapp.com/passwordManager)
 
-https://github.com/jcsgh/password-manager-client
+[Link to frontend code](https://github.com/jcsgh/password-manager-client)
